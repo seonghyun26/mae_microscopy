@@ -180,6 +180,19 @@ class MAEModel(PreTrainedModel):
         latent, mask, ind_restore = self.encoder.forward_masked(
             imgs, self.mask_ratio, constant_noise
         )  # encoder blocks
+
+        from matplotlib import pyplot as plt
+
+        print(latent.shape)
+        plt.imshow(latent[0])
+        # latent의 값을 시각화하기 전에 normalization을 적용하여 색깔이 더 잘 구분되도록 합니다.
+        latent_to_show = latent[0]
+        latent_min = latent_to_show.min()
+        latent_max = latent_to_show.max()
+        latent_norm = (latent_to_show - latent_min) / (latent_max - latent_min + 1e-5)
+        plt.imshow(latent_norm)
+        print(latent)
+
         reconstruction = self.decode_to_reconstruction(
             latent,
             ind_restore,
