@@ -30,3 +30,7 @@ MANIFEST
 *.pickle
 *.ckpt
 *.safetensors
+
+./data/*
+*.tiff
+*.xml
