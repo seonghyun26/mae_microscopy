@@ -31,6 +31,6 @@ MANIFEST
 *.ckpt
 *.safetensors
 
-./data/*
+data/*
 *.tiff
 *.xml
