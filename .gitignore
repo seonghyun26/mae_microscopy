@@ -34,3 +34,5 @@ MANIFEST
 data/*
 *.tiff
 *.xml
+*.csv
+*.parquet
